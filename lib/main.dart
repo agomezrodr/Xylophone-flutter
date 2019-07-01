@@ -9,6 +9,17 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$x.wav');
   }
 
+  Expanded buildKey({Color color, int x}) {
+    return Expanded(
+      child: FlatButton(
+        color: color,
+        onPressed: () {
+          playSound(x);
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,62 +29,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blueGrey[900],
-                  onPressed: () {
-                    playSound(1);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blueGrey[800],
-                  onPressed: () {
-                    playSound(2);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blueGrey[700],
-                  onPressed: () {
-                    playSound(3);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blueGrey[600],
-                  onPressed: () {
-                    playSound(4);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blueGrey[500],
-                  onPressed: () {
-                    playSound(5);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blueGrey[400],
-                  onPressed: () {
-                    playSound(6);
-                  },
-                ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blueGrey[300],
-                  onPressed: () {
-                    playSound(7);
-                  },
-                ),
-              ),
+              buildKey(color: Colors.blueGrey[900], x: 1),
+              buildKey(color: Colors.blueGrey[800], x: 2),
+              buildKey(color: Colors.blueGrey[700], x: 3),
+              buildKey(color: Colors.blueGrey[600], x: 4),
+              buildKey(color: Colors.blueGrey[500], x: 5),
+              buildKey(color: Colors.blueGrey[400], x: 6),
+              buildKey(color: Colors.blueGrey[300], x: 7),
             ],
           ),
         ),
@@ -81,3 +43,60 @@ class XylophoneApp extends StatelessWidget {
     );
   }
 }
+
+//Expanded(
+//child: FlatButton(
+//color: Colors.blueGrey[900],
+//onPressed: () {
+//playSound(1);
+//},
+//),
+//),
+//Expanded(
+//child: FlatButton(
+//color: Colors.blueGrey[800],
+//onPressed: () {
+//playSound(2);
+//},
+//),
+//),
+//Expanded(
+//child: FlatButton(
+//color: Colors.blueGrey[700],
+//onPressed: () {
+//playSound(3);
+//},
+//),
+//),
+//Expanded(
+//child: FlatButton(
+//color: Colors.blueGrey[600],
+//onPressed: () {
+//playSound(4);
+//},
+//),
+//),
+//Expanded(
+//child: FlatButton(
+//color: Colors.blueGrey[500],
+//onPressed: () {
+//playSound(5);
+//},
+//),
+//),
+//Expanded(
+//child: FlatButton(
+//color: Colors.blueGrey[400],
+//onPressed: () {
+//playSound(6);
+//},
+//),
+//),
+//Expanded(
+//child: FlatButton(
+//color: Colors.blueGrey[300],
+//onPressed: () {
+//playSound(7);
+//},
+//),
+//),
