@@ -9,9 +9,13 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$x.wav');
   }
 
-  Expanded buildKey({Color color, int x}) {
+  Expanded buildKey({Color color, int x, String y}) {
     return Expanded(
       child: FlatButton(
+        child: Center(
+          child: Text('Touch me'),
+        ),
+        textColor: Colors.white,
         color: color,
         onPressed: () {
           playSound(x);
@@ -25,6 +29,10 @@ class XylophoneApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Text('Xylophone- By Adrian Gomez'),
+        ),
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
