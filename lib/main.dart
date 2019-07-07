@@ -24,6 +24,7 @@ class XylophoneApp extends StatelessWidget {
     );
   }
 
+  //Make code smaller
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
